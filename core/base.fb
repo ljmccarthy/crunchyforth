@@ -1,0 +1,90 @@
+words
+: drop, postpone drop ;
+: dup, postpone dup ;
+macros
+: over /dup $04468b 3, ;
+: nip $04768d 3, ;
+: swap $168b 2, $0689 2, $d089 2, ;
+: tuck $168b 2, $fc768d 3, $1689 2, $44689 3, ;
+: 2dup $168b 2, $f8768d 3, $44689 3, $1689 2, ;
+: >r $50 1, drop, ;
+: r> /dup $58 1, ;
+: r@ /dup $24048b 3, ;
+: i postpone r@ ;
+: rdrop $59 1, ;
+: depth $b9 1, $0c00 , $f129 2, $02e9c1 3, dup, $c889 2, ;
+words
+: drop drop ;
+: dup dup ;
+: over over ;
+: nip nip ;
+: swap swap ;
+: tuck tuck ;
+: 2dup 2dup ;
+: depth depth ;
+
+macros
+: negate $d8f7 2, ;
+: 1+ $40 1, ;
+: 1- $48 1, ;
+: -1 $ffffffff lit, ;
+: strung $062b 2, ;
+words
+: negate negate ;
+: 1+ 1+ ;
+: 1- 1- ;
+: -1 -1 ;
+: strung strung ;
+
+: if, 1, here 0 1, branches ;
+macros
+: if $74 if, ;
+: /if $75 if, ;
+: +if $78 if, ;
+: -if $79 if, ;
+: else $eb 1, 0 1, resolve here 1- branches ;
+: then resolve branches ;
+: for $c189 2, drop, here $51 1, branches ;
+: next $59 1, $e2 1, there negate 1- 1, drop branches ;
+: call $c189 2, drop, $d1ff 2, ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

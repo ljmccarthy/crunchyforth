@@ -1,0 +1,159 @@
+macros
+: @ ?lit if /dup $a1 1, , ;; then $008b 2, ;
+: 2@ ?lit if /dup $05b70f 3, , ;; then $00b70f 3, ;
+: 1@ ?lit if /dup $05b60f 3, , ;; then $00b60f 3, ;
+: ! $c289 2, drop, $0289 2, drop, ;
+: 2! $c289 2, drop, $028966 3, drop, ;
+: 1! $c289 2, drop, $0288 2, drop, ;
+: +! $c289 2, drop, $0201 2, drop, ;
+: 1+! ?lit if $05ff 2, , else $00ff 2, drop, then ;
+words
+: @ @ ;
+: 2@ 2@ ;
+: 1@ 1@ ;
+: ! ! ;
+: 2! 2! ;
+: 1! 1! ;
+: 1! 1! ;
+: +! +! ;
+: 1+! 1+! ;
+
+macros
+: <fill $0e8b 2, $047e8b 3, $f3 1, ;
+: fill> drop, drop, drop, ;
+: stosd $ab 1, ;
+: stosw $ab66 2, ;
+: stosb $aa 1, ;
+words
+: 1fill <fill stosb fill> ;
+: 2fill <fill stosw fill> ;
+: 4fill <fill stosd fill> ;
+
+macros
+: <copy $c189 2, $3e8b 2, $56 1, $04768b 3, $f3 1, ;
+: copy> $5e 1, drop, drop, drop, ;
+: movsd $a5 1, ;
+: movsw $a566 2, ;
+: movsb $a4 1, ;
+words
+: 1copy <copy movsb copy> ;
+: 2copy <copy movsw copy> ;
+: 4copy <copy movsd copy> ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

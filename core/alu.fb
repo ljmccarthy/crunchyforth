@@ -1,0 +1,102 @@
+macros
+: + ?lit if $05 1, , else $0601 2, drop, then ;
+: - ?lit if $2d 1, , else $0629 2, drop, then ;
+: * ?lit if $b9 1, , else $c189 2, drop, then $e9f7 2, ;
+: /mod $c189 2, $068b 2, $99 1, $d231 2, $f9f7 2, $1689 2, ;
+: 2* $e0d1 2, ;
+: 2/ $e8d1 2, ;
+words
+: + + ;
+: - - ;
+: * * ;
+: /mod /mod ;
+: / /mod nip ;
+: mod /mod drop ;
+: 2* 2* ;
+: 2/ 2/ ;
+
+macros
+: shl ?lit if $e0c1 2, 1, ;; then $c189 2, drop, $e0d3 2, ;
+: shr ?lit if $b9 1, , else $c189 2, drop, then $e8d3 2, ;
+: and ?lit if $25 1, , ;; then $0621 2, drop, ;
+: or ?lit if $0d 1, , ;; then $0609 2, drop, ;
+: xor ?lit if $35 1, , ;; then $0631 2, drop, ;
+: invert $d0f7 2, ;
+words
+: shl shl ;
+: shr shr ;
+: and and ;
+: or or ;
+: xor xor ;
+: invert invert ;
+
+macros
+: ? ?lit if $a9 1, , else $0685 2, drop, then ;
+: -? ?lit if $3d 1, , else $0639 2, drop, then ;
+: #? $c085 2, ;
+: cmp $0639 2, ;
+: T $01c983 3, ;
+: F $c931 2, ;
+
+words
+: min cmp -if drop ;; then nip ;
+: max cmp -if nip ;; then drop ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
